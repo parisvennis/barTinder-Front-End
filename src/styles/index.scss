@@ -1,11 +1,45 @@
 .logInQuery {
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     margin: 0;
+    margin-bottom: 100px;
 }
 .cardListContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+.fullPlanetList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.fab {
+    margin: 10px;
+}
+.logInOut {
+    text-align: center;
+}
+body {
+    background-color: black;
+}
+.social {
+    margin-bottom: 100px;
+}
+.logIn {
+    margin: 5px;
+    margin-right: 5px;
+}
+.logOut {
+    margin: 5px;
+    margin-right: 5px;
+}
+.bg-light {
+    background-color: #f1e33b !important;
+}
+.btn-secondary {
+    color: black;
+    background-color: #f1e33b ;
+    border-color: #f1e33b ;
 }

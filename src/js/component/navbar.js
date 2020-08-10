@@ -6,13 +6,15 @@ export const Navbar = () => {
 		<>
 			<nav className="navbar navbar-light bg-light mb-3">
 				<Link to="/">
-					<span className="navbar-brand mb-0 mr-0 h1">
-						<i className="fab fa-facebook-square" aria-hidden="true" />
-						<i className="fab fa-instagram" aria-hidden="true" />
-						<i className="fab fa-tumblr" aria-hidden="true" />
-						<i className="fab fa-twitter" aria-hidden="true" />
-						<i className="fab fa-youtube" aria-hidden="true" />
-					</span>
+					<div className="social">
+						<span className="navbar-brand mb-0 mr-0 h1">
+							<i className="fab fa-facebook-square" aria-hidden="true" />
+							<i className="fab fa-instagram" aria-hidden="true" />
+							<i className="fab fa-tumblr" aria-hidden="true" />
+							<i className="fab fa-twitter" aria-hidden="true" />
+							<i className="fab fa-youtube" aria-hidden="true" />
+						</span>
+					</div>
 				</Link>
 
 				<div className="logo" style={{ margin: "0 auto" }}>
@@ -37,13 +39,13 @@ export const Navbar = () => {
 								autoComplete="off"
 							/>
 						</div>
-						<div className="logIn">
+						<div className="logInOut">
 							<div className="btn-group" role="group" aria-label="Basic example">
-								<button type="button" className="btn btn-secondary">
-									Left
+								<button type="button" className="logIn btn btn-secondary">
+									LOGIN
 								</button>
-								<button type="button" className="btn btn-secondary">
-									Right
+								<button type="logOut button" className="logOut btn btn-secondary">
+									LOGOUT
 								</button>
 							</div>
 						</div>
@@ -67,19 +69,19 @@ export const Navbar = () => {
 				<div className="collapse navbar-collapse" id="navbarNav">
 					<ul className="navbar-nav">
 						<li className="nav-item active">
-							<a className="nav-link" href="#">
-								NEWS + BLOG <span className="sr-only">(current)</span>
-							</a>
+							<Link className="nav-link" to="/">
+								HOME
+							</Link>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link" href="#">
-								VIDEO
-							</a>
+							<Link className="nav-link" to="/characters">
+								CHARACTERS
+							</Link>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link" href="#">
-								FILMS
-							</a>
+							<Link className="nav-link" to="/planets">
+								PLANETS
+							</Link>
 						</li>
 						<li className="nav-item">
 							<a className="nav-link disabled" href="#">

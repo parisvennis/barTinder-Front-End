@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Characters extends React.Component {
 	constructor() {
@@ -20,7 +21,7 @@ class Characters extends React.Component {
 			return (
 				<div key={i} className="card" style={{ width: "18rem" }}>
 					<img
-						src="https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg"
+						src={`https://loremflickr.com/200/200/starwars?random=${i}`}
 						className="card-img-top"
 						alt="..."
 					/>
