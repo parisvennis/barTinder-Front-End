@@ -1,3 +1,11 @@
-/* 
-    General Styles
-*/
+.logInQuery {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+    margin: 0;
+}
+.cardListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -6,17 +6,51 @@ export const Navbar = () => {
 		<>
 			<nav className="navbar navbar-light bg-light mb-3">
 				<Link to="/">
-					<span className="navbar-brand mb-0 h1">
-						<i className="fa fa-facebook-square" aria-hidden="true" />
-						<i className="fa fa-instagram" aria-hidden="true" />
+					<span className="navbar-brand mb-0 mr-0 h1">
+						<i className="fab fa-facebook-square" aria-hidden="true" />
+						<i className="fab fa-instagram" aria-hidden="true" />
+						<i className="fab fa-tumblr" aria-hidden="true" />
+						<i className="fab fa-twitter" aria-hidden="true" />
+						<i className="fab fa-youtube" aria-hidden="true" />
 					</span>
 				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
+
+				<div className="logo" style={{ margin: "0 auto" }}>
+					<img
+						src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png"
+						width="250px"
+						height="150px"
+					/>
+				</div>
+
+				<div>
+					<div className="logInQuery">
+						<div className="search">
+							<input
+								id="nav-search-input"
+								name="q"
+								type="text"
+								placeholder="Search Star Wars"
+								spellCheck="false"
+								autoCorrect="off"
+								autoCapitalize="off"
+								autoComplete="off"
+							/>
+						</div>
+						<div className="logIn">
+							<div className="btn-group" role="group" aria-label="Basic example">
+								<button type="button" className="btn btn-secondary">
+									Left
+								</button>
+								<button type="button" className="btn btn-secondary">
+									Right
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</nav>
+			{/* top navbar  */}
 
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<a className="navbar-brand" href="#" />
