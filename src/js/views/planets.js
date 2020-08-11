@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 class Planets extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { planet: [] };
+		this.state = { planetList: [] };
 	}
 
 	componentDidMount() {
@@ -17,8 +17,8 @@ class Planets extends React.Component {
 	}
 
 	render() {
-		let planetCards = this.state.planetList.map((planets, i) => {
-			console.log(props);
+		console.log(this.state);
+		let planetCards = this.state.planetList.map((planet, i) => {
 			return (
 				<div key={i} className="card" style={{ width: "18rem" }}>
 					<img
@@ -26,15 +26,11 @@ class Planets extends React.Component {
 						className="card-img-top"
 						alt="..."
 					/>
-
-					<div className="card-body">
-						<h5 className="card-title">{planets.name}</h5>
-					</div>
 					<button
 						type="button"
 						className="btn btn-secondary"
 						onClick={() => this.props.history.push(`/planet-info/${i + 1}`)}>
-						{char.name}
+						{planet.name}
 					</button>
 				</div>
 			);

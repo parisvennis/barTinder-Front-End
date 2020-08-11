@@ -83,7 +83,7 @@ export const Navbar = () => {
 								PLANETS
 							</Link>
 						</li>
-						<li className="nav-item">
+						{/* <li className="nav-item">
 							<a className="nav-link disabled" href="#">
 								SERIES
 							</a>
@@ -102,7 +102,7 @@ export const Navbar = () => {
 							<a className="nav-link disabled" href="#">
 								DATABANK
 							</a>
-						</li>
+						</li> */}
 					</ul>
 				</div>
 			</nav>
