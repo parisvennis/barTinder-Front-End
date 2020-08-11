@@ -3,12 +3,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
 import Characters from "./views/characters";
 import Planets from "./views/planets";
-// import { CharacterInfo } from "./views/characterinfo";
-// import { PlanetInfo } from "./views/planetinfo";
+import PlanetInfo from "./views/planetInfo";
+import CharacterInfo from "./views/characterInfo";
+
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -26,24 +25,11 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/characters">
-							<Characters />
-						</Route>
-						<Route exact path="/planets">
-							<Planets />
-						</Route>
-						<Route exact path="/planets">
-							<Planets />
-						</Route>
-						{/* <Route exact path="/character-info/:theid">
-							<CharacterInfo />
-						</Route> */}
-						{/* <Route exact path="/planet-info/:theid">
-							<PlanetInfo />
-						</Route> */}
+						<Route exact path="/characters" component={Characters} />
+						<Route exact path="/planets" component={Planets} />
+						<Route exact path="/planet-info/:id" component={PlanetInfo} />
+						<Route exact path="/character-info/:id" component={CharacterInfo} />
+						<Route exact path="/" component={Home} />
 						<Route>
 							<h1>Not found!</h1>
 						</Route>

@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class Characters extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = { characterList: [] };
 	}
 
@@ -16,7 +17,6 @@ class Characters extends React.Component {
 	}
 
 	render() {
-		console.log(this.state);
 		let cardList = this.state.characterList.map((char, i) => {
 			return (
 				<div key={i} className="card" style={{ width: "18rem" }}>
@@ -26,7 +26,12 @@ class Characters extends React.Component {
 						alt="..."
 					/>
 					<div className="card-body">
-						<p className="card-text">{char.name}</p>
+						<button
+							type="button"
+							className="btn btn-secondary"
+							onClick={() => this.props.history.push(`/character-info/${i + 1}`)}>
+							{char.name}
+						</button>
 					</div>
 				</div>
 			);
@@ -35,4 +40,7 @@ class Characters extends React.Component {
 		return <div className="cardListContainer">{cardList}</div>;
 	}
 }
+
+Characters.propTypes = { history: PropTypes.object };
+
 export default Characters;
