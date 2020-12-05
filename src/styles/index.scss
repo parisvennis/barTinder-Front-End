@@ -36,13 +36,20 @@ body {
     margin-right: 5px;
 }
 .bg-light {
-    background-color: #f1e33b !important;
+    background-image: linear-gradient(to right,#ee2d87, #f22278, #fc7745);
 }
 .btn-secondary {
     color: black;
-    background-color: #f1e33b ;
-    border-color: #f1e33b ;
+    background-color: #b2bec3 ;
+    border-color: #b2bec3 ;
 }
 .card-body {
     text-align: center;
+}
+.cards {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
 }

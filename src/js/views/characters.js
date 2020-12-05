@@ -21,7 +21,7 @@ class Characters extends React.Component {
 			return (
 				<div key={i} className="card" style={{ width: "18rem" }}>
 					<img
-						src={`https://loremflickr.com/200/200/starwars?random=${i}`}
+						src={`https://loremflickr.com/200/200/cocktails?random=${i}`}
 						className="card-img-top"
 						alt="..."
 					/>

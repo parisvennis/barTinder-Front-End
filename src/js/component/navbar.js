@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../img/logo.png";
 
 export const Navbar = () => {
 	return (
@@ -18,11 +19,7 @@ export const Navbar = () => {
 				</Link>
 
 				<div className="logo" style={{ margin: "0 auto" }}>
-					<img
-						src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png"
-						width="250px"
-						height="150px"
-					/>
+					<img src={Logo} width="250px" height="150px" />
 				</div>
 
 				<div>
@@ -32,7 +29,7 @@ export const Navbar = () => {
 								id="nav-search-input"
 								name="q"
 								type="text"
-								placeholder="Search Star Wars"
+								placeholder="Search Drinks"
 								spellCheck="false"
 								autoCorrect="off"
 								autoCapitalize="off"

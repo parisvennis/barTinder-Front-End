@@ -17,7 +17,6 @@ class Planets extends React.Component {
 	}
 
 	render() {
-		console.log(this.state);
 		let planetCards = this.state.planetList.map((planet, i) => {
 			return (
 				<div key={i} className="card" style={{ width: "18rem" }}>
