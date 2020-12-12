@@ -99,6 +99,7 @@ body {
 .card-body {
     text-align: center;
 }
+
 .cards {
     width: 800px;
     display: flex;
@@ -106,3 +107,12 @@ body {
     text-align: center;
     
 }
+
+.jumbotron {
+    background: url("../img/cool.jpg");
+    background-repeat: no-repeat;
+    background-position: 50px 150px;
+    background-size: contain;
+    background-color: black;
+    background-position: 0px 0px;
+} 
