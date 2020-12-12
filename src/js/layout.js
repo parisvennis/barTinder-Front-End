@@ -9,7 +9,7 @@ import PlanetInfo from "./views/planetInfo";
 import CharacterInfo from "./views/characterInfo";
 
 import injectContext from "./store/appContext";
-
+import { Login } from "./component/login";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -25,6 +25,7 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
+						<Route exact path="/login" component={Login} />
 						<Route exact path="/characters" component={Characters} />
 						<Route exact path="/planets" component={Planets} />
 						<Route exact path="/planet-info/:id" component={PlanetInfo} />

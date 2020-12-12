@@ -1,9 +1,13 @@
+// const barTinderBackEndURL = "https://3000-be5cc1ca-ee5b-488d-9cb8-43a0c81bfdaf.ws-us03.gitpod.io/";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			favorites: []
+			favorites: [],
+			token: null
 		},
 		actions: {
+			login: (email, password) => {},
 			// addFavorite: favorite => {
 			// 	const store = getStore();
 			// 	let newFavorite = { name: favorite };

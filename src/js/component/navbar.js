@@ -7,6 +7,18 @@ export const Navbar = () => {
 		<>
 			<nav className="navbar navbar-light bg-light mb-3">
 				<Link to="/">
+					<div className="search">
+						<input
+							id="nav-search-input"
+							name="q"
+							type="text"
+							placeholder="Search Drinks"
+							spellCheck="false"
+							autoCorrect="off"
+							autoCapitalize="off"
+							autoComplete="off"
+						/>
+					</div>
 					<div className="social">
 						<span className="navbar-brand mb-0 mr-0 h1">
 							<i className="fab fa-facebook-square" aria-hidden="true" />
@@ -19,34 +31,18 @@ export const Navbar = () => {
 				</Link>
 
 				<div className="logo" style={{ margin: "0 auto" }}>
-					<img src={Logo} width="250px" height="150px" />
+					<img src={Logo} />
 				</div>
 
-				<div>
-					<div className="logInQuery">
-						<div className="search">
-							<input
-								id="nav-search-input"
-								name="q"
-								type="text"
-								placeholder="Search Drinks"
-								spellCheck="false"
-								autoCorrect="off"
-								autoCapitalize="off"
-								autoComplete="off"
-							/>
-						</div>
-						<div className="logInOut">
-							<div className="btn-group" role="group" aria-label="Basic example">
-								<button type="button" className="logIn btn btn-secondary">
-									LOGIN
-								</button>
-								<button type="logOut button" className="logOut btn btn-secondary">
-									LOGOUT
-								</button>
-							</div>
-						</div>
-					</div>
+				<div className="login">
+					<a href="#" className="signup">
+						<span className="gradient" />
+						Sign Up
+					</a>
+					<a href="#" className="signup">
+						<span className="gradient" />
+						Login
+					</a>
 				</div>
 			</nav>
 			{/* top navbar  */}
