@@ -68,34 +68,19 @@ export const Navbar = () => {
 						</li>
 						<li className="nav-item">
 							<Link className="nav-link" to="/characters">
-								CHARACTERS
+								COCKTAILS
 							</Link>
 						</li>
 						<li className="nav-item">
 							<Link className="nav-link" to="/planets">
-								PLANETS
+								LIQUORS
 							</Link>
 						</li>
-						{/* <li className="nav-item">
-							<a className="nav-link disabled" href="#">
-								SERIES
-							</a>
-						</li>
 						<li className="nav-item">
-							<a className="nav-link disabled" href="#">
-								INTERACTIVE
-							</a>
+							<Link className="nav-link" to="/planets">
+								MY ACCOUNT
+							</Link>
 						</li>
-						<li className="nav-item">
-							<a className="nav-link disabled" href="#">
-								COMMUNITY
-							</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link disabled" href="#">
-								DATABANK
-							</a>
-						</li> */}
 					</ul>
 				</div>
 			</nav>
