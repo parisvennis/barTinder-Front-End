@@ -31,7 +31,7 @@ export const Navbar = () => {
 				</Link>
 
 				<div className="logo" style={{ margin: "0 auto" }}>
-					<img src={Logo} />
+					<img src={Logo} height="75" />
 				</div>
 
 				<div className="login">

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
 
 export const Login = () => {
+	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState();
 	// #first value to read the state the second is to set the state
 	const [password, setPassword] = useState();
@@ -36,7 +38,10 @@ export const Login = () => {
 					<input type="checkbox" value="remember-me" /> Remember me
 				</label>
 			</div>
-			<button className="btn btn-lg btn-primary btn-block" type="submit">
+			<button
+				className="btn btn-lg btn-primary btn-block"
+				onClick={() => actions.login(email, password)}
+				type="button">
 				Sign in
 			</button>
 			<p className="mt-5 mb-3 text-muted">&copy; 2017-2020</p>

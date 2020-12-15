@@ -18,7 +18,7 @@
     flex-direction: column;
     // border: 1px solid blue;
     margin: 0;
-    margin-bottom: 140px;
+    // margin-bottom: 140px;
     text-align: center;
     display: inline-table;
     margin-left: 50px;
@@ -87,9 +87,9 @@
 body {
     background-color: black;
 }
-.social {
-    margin-bottom: 100px;
-}
+// .social {
+//     margin-bottom: 100px;
+// }
 
 
 .bg-light {
@@ -115,4 +115,5 @@ body {
     background-size: contain;
     background-color: black;
     background-position: 0px 0px;
+    background-position-x: right;
 } 

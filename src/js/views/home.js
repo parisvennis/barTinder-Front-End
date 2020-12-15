@@ -4,7 +4,7 @@ import "../../styles/home.scss";
 export const Home = () => {
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">Get Matched to Your Favorite Drink!</h1>
+			<h1 className="home-title display-4">Get Matched to Your Favorite Drink!</h1>
 			<p className="lead">
 				We have designed a simple and fast quiz that will match you to the drink that best suits you! It takes
 				into account your taste buds, allergies, and requests and creates your best match!

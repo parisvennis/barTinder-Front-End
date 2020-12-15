@@ -1,4 +1,4 @@
-// const barTinderBackEndURL = "https://3000-be5cc1ca-ee5b-488d-9cb8-43a0c81bfdaf.ws-us03.gitpod.io/";
+const barTinderBackEndURL = "https://3000-c1e8e786-36fe-4345-b0da-3eb0f9f784b5.ws-us03.gitpod.io/";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -7,7 +7,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null
 		},
 		actions: {
-			login: (email, password) => {},
+			login: (email, password) => {
+				fetch(`${barTinderBackEndURL}login`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						email: email,
+						password: password
+					})
+				})
+					.then(response => response.json())
+					.then(token => {
+						if (typeof token.msg != "undefined") {
+							// Notify.error(token.msg);
+						} else {
+							setStore({ token: token.jwt });
+						}
+					});
+			},
+
 			// addFavorite: favorite => {
 			// 	const store = getStore();
 			// 	let newFavorite = { name: favorite };
