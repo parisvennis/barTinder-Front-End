@@ -28,6 +28,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 
+			logout: () => {
+				setStore({ token: null });
+			},
+
+			signup: (email, password, birth, first, last) => {
+				fetch(`${barTinderBackEndURL}user`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						email: email,
+						password: password,
+						first_name: first,
+						last_name: last,
+						birth_date: birth,
+						created_date: "2019-01-01"
+					})
+				});
+			},
+
 			// addFavorite: favorite => {
 			// 	const store = getStore();
 			// 	let newFavorite = { name: favorite };

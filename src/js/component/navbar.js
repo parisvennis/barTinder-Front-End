@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../img/logo.png";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<>
 			<nav className="navbar navbar-light bg-light mb-3">
@@ -35,14 +37,21 @@ export const Navbar = () => {
 				</div>
 
 				<div className="login">
-					<a href="#" className="signup">
+					<Link to="/signup" className="signup">
 						<span className="gradient" />
 						Sign Up
-					</a>
-					<a href="#" className="signup">
-						<span className="gradient" />
-						Login
-					</a>
+					</Link>
+					{store.token == null ? (
+						<Link to="/login" className="signup">
+							<span className="gradient" />
+							Login
+						</Link>
+					) : (
+						<Link to="/" className="signup" onClick={() => actions.logout()}>
+							<span className="gradient" />
+							Logout
+						</Link>
+					)}
 				</div>
 			</nav>
 			{/* top navbar  */}

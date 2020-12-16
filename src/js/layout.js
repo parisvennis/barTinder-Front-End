@@ -6,6 +6,8 @@ import { Home } from "./views/home";
 import Characters from "./views/characters";
 import Planets from "./views/planets";
 import PlanetInfo from "./views/planetInfo";
+import { Signup } from "./views/signup";
+
 import CharacterInfo from "./views/characterInfo";
 
 import injectContext from "./store/appContext";
@@ -26,6 +28,7 @@ const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/login" component={Login} />
+						<Route exact path="/signup" component={Signup} />
 						<Route exact path="/characters" component={Characters} />
 						<Route exact path="/planets" component={Planets} />
 						<Route exact path="/planet-info/:id" component={PlanetInfo} />

@@ -109,11 +109,12 @@ body {
 }
 
 .jumbotron {
-    background: url("../img/cool.jpg");
+    background-image: url("../img/cool.jpg");
     background-repeat: no-repeat;
     background-position: 50px 150px;
     background-size: contain;
     background-color: black;
     background-position: 0px 0px;
     background-position-x: right;
+    opacity: 0.8;
 } 
