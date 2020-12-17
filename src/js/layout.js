@@ -2,6 +2,11 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
+import { StepBase } from "./component/stepBase.js";
+// import { StepModifier } from "../component/StepModifier.js";
+// import { StepGarnish } from "../component/StepGarnish.js";
+import { Questions } from "./views/questions";
+
 import { Home } from "./views/home";
 import Characters from "./views/characters";
 import Planets from "./views/planets";
@@ -33,6 +38,9 @@ const Layout = () => {
 						<Route exact path="/planets" component={Planets} />
 						<Route exact path="/planet-info/:id" component={PlanetInfo} />
 						<Route exact path="/character-info/:id" component={CharacterInfo} />
+						<Route exact path="/questions" component={Questions} />
+						<Route exact path="/questions/:currentstep" component={Questions} />
+						<Route exact path="/stepBase" component={StepBase} />
 						<Route exact path="/" component={Home} />
 						<Route>
 							<h1>Not found!</h1>

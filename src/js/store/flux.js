@@ -49,6 +49,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 
+			setBase: base => {
+				const currentStore = getStore();
+				setStore({
+					visitor: {
+						...currentStore.base,
+						base: base
+					}
+				});
+			},
+
+			addBase: async base => {
+				const currentStore = getStore();
+
+				const response = await fetch(`${barTinderBackEndURL},base`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						...currentStore.currentBase,
+						base: base
+					})
+				});
+				if (response.ok) {
+					const data = await response.json();
+					setStore({
+						currentBase: data
+					});
+					console.log(data);
+					return true;
+				} else {
+					return false;
+				}
+			},
 			// addFavorite: favorite => {
 			// 	const store = getStore();
 			// 	let newFavorite = { name: favorite };
