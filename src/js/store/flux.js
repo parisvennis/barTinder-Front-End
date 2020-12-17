@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			favorites: [],
+			randomCocktails: [],
 			token: null
 		},
 		actions: {
@@ -83,6 +84,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return false;
 				}
 			},
+
+			getRandomCocktails: () => {
+				fetch("https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php")
+					.then(data => data.json())
+					.then(response => {
+						setStore({ randomCocktails: response });
+					});
+			},
+
 			// addFavorite: favorite => {
 			// 	const store = getStore();
 			// 	let newFavorite = { name: favorite };

@@ -10,7 +10,7 @@ import { Questions } from "./views/questions";
 import { Home } from "./views/home";
 import Characters from "./views/characters";
 import Planets from "./views/planets";
-import PlanetInfo from "./views/planetInfo";
+import RandomCocktails from "./views/randomCocktails";
 import { Signup } from "./views/signup";
 
 import CharacterInfo from "./views/characterInfo";
@@ -36,7 +36,7 @@ const Layout = () => {
 						<Route exact path="/signup" component={Signup} />
 						<Route exact path="/characters" component={Characters} />
 						<Route exact path="/planets" component={Planets} />
-						<Route exact path="/planet-info/:id" component={PlanetInfo} />
+						<Route exact path="/random-cocktails" component={RandomCocktails} />
 						<Route exact path="/character-info/:id" component={CharacterInfo} />
 						<Route exact path="/questions" component={Questions} />
 						<Route exact path="/questions/:currentstep" component={Questions} />

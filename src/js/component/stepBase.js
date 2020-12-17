@@ -97,7 +97,7 @@ export const StepBase = function() {
 							className="custom-control-input"
 						/>
 						<label className="custom-control-label" htmlFor="customRadioDisabled6">
-							Non-Alcoholic
+							Non Alcoholic
 						</label>
 					</div>
 				</div>
