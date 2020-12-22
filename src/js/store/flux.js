@@ -5,7 +5,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			favorites: [],
 			randomCocktails: [],
-			token: null
+			token: null,
+			currentBase: [],
+			base: []
 		},
 		actions: {
 			login: (email, password) => {
@@ -53,11 +55,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setBase: base => {
 				const currentStore = getStore();
 				setStore({
-					visitor: {
+					base: {
 						...currentStore.base,
 						base: base
 					}
 				});
+				console.log(currentStore.base);
 			},
 
 			addBase: async base => {
@@ -89,7 +92,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch("https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php")
 					.then(data => data.json())
 					.then(response => {
-						setStore({ randomCocktails: response });
+						setStore({ randomCocktails: response.drinks });
 					});
 			},
 

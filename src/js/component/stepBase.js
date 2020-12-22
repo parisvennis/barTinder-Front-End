@@ -5,18 +5,68 @@ import { Redirect, useHistory, useParams } from "react-router-dom";
 export const StepBase = function() {
 	const { store, actions } = useContext(Context);
 	const history = useHistory();
-	const [base, setBase] = useState(null);
+	// const [base, setBase] = useState(null);
 
 	return (
 		<>
-			<div className="container pt-5 d-flex flex-column h-100 justify-content-center">
-				<h3 className="text-center mb-4">Select Your Base</h3>
-				<div className="card bg-light mb-3 p-2">
-					<div className="card-body custom-control custom-radio">
-						<input
+			<div className="container d-flex flex-column h-100 justify-content-center">
+				<h3 className="text-center mb-4" style={{ color: "white" }}>
+					Select Your Base
+				</h3>
+				<button
+					type="button"
+					value="Vodka"
+					id="Q1"
+					className="btn btn-primary btn-lg mb-3 p-2"
+					onClick={e => actions.setBase(e.target.value)}>
+					Vodka
+				</button>
+				<button
+					type="button"
+					value="Rum"
+					id="Q1"
+					className="btn btn-primary btn-lg mb-3 p-2"
+					onClick={e => actions.setBase(e.target.value)}>
+					Rum
+				</button>
+				<button
+					type="button"
+					value="Gin"
+					id="Q1"
+					className="btn btn-primary btn-lg mb-3 p-2"
+					onClick={e => actions.setBase(e.target.value)}>
+					Gin
+				</button>
+				<button
+					type="button"
+					value="Tequila"
+					id="Q1"
+					className="btn btn-primary btn-lg mb-3 p-2"
+					onClick={e => actions.setBase(e.target.value)}>
+					Tequila
+				</button>
+				<button
+					type="button"
+					value="Whiskey"
+					id="Q1"
+					className="btn btn-primary btn-lg mb-3 p-2"
+					onClick={e => actions.setBase(e.target.value)}>
+					Whiskey
+				</button>
+				<button
+					type="button"
+					value="Non Alcoholic"
+					id="Q1"
+					className="btn btn-primary btn-lg mb-3 p-2"
+					onClick={e => actions.setBase(e.target.value)}>
+					Non Alcoholic
+				</button>
+				{/* <div className="card bg-light mb-3 p-2">
+					<div className="card-body">
+						<button
 							onClick={e => setBase(e.target.value)}
 							value="Vodka"
-							type="radio"
+							type="button"
 							name="radioDisabled"
 							id="customRadioDisabled1"
 							className="custom-control-input"
@@ -100,7 +150,7 @@ export const StepBase = function() {
 							Non Alcoholic
 						</label>
 					</div>
-				</div>
+				</div> */}
 				<button
 					onClick={async () => {
 						let success = await actions.addBase(base);
@@ -112,7 +162,7 @@ export const StepBase = function() {
 						}
 					}}
 					type="button"
-					className="btn btn-primary mx-auto w-25">
+					className="btn btn-basic mx-auto w-25">
 					Next
 				</button>
 			</div>
