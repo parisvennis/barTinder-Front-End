@@ -8,17 +8,13 @@ import { StepBase } from "./component/stepBase.js";
 import { Questions } from "./views/questions";
 
 import { Home } from "./views/home";
-import Characters from "./views/characters";
-import Planets from "./views/planets";
 import RandomCocktails from "./views/randomCocktails";
 import { Signup } from "./views/signup";
-
-import CharacterInfo from "./views/characterInfo";
-
 import injectContext from "./store/appContext";
 import { Login } from "./component/login";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import SingleCocktail from "./views/singleCocktail";
 
 //create your first component
 const Layout = () => {
@@ -34,10 +30,8 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/login" component={Login} />
 						<Route exact path="/signup" component={Signup} />
-						<Route exact path="/characters" component={Characters} />
-						<Route exact path="/planets" component={Planets} />
 						<Route exact path="/random-cocktails" component={RandomCocktails} />
-						<Route exact path="/character-info/:id" component={CharacterInfo} />
+						<Route exact path="/single-cocktail" component={SingleCocktail} />
 						<Route exact path="/questions" component={Questions} />
 						<Route exact path="/questions/:currentstep" component={Questions} />
 						<Route exact path="/stepBase" component={StepBase} />

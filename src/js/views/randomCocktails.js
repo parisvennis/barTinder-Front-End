@@ -10,24 +10,17 @@ const RandomCocktails = () => {
 			{store.randomCocktails.map((cocktail, i) => {
 				return (
 					<>
-						<div key={i} className="cards" style={{ width: "18rem" }}>
+						<div key={i} id="singCocktail" className="card" style={{ width: "18rem" }}>
 							<img src={cocktail.strDrinkThumb} className="card-img-top" alt="..." />
 							<div className="card-body">
-								<h5 className="card-title">{cocktail.strDrink}</h5>
-								<p className="card-text">
-									{/* <div className="cocktailDetailContainer">
-									Cocktail Details
-									<span>Name: {this.state.cocktail.strDrink}</span>
-									<span>Height: {this.state.cocktail.height} </span>
-									<span>Mass: {this.state.cocktail.mass} </span>
-									<span>Hair Color: {this.state.cocktail.hair_color} </span>
-									<span>Skin Color: {this.state.cocktail.skin_color} </span>
-									<span>Eye Color: {this.state.cocktail.eye_color} </span>
-									<span>Birth Year: {this.state.cocktail.birth_year} </span>
-									<span>Gender: {this.state.cocktail.gender}</span>
-									<span>Homeworld: {this.state.cocktail.homeworld} </span>
-								</div> */}
-								</p>
+								<Link to={`/single-cocktail`}>
+									<button
+										type="button"
+										className="btn btn-basic"
+										onClick={() => actions.getCocktail(cocktail.idDrink)}>
+										{cocktail.strDrink}
+									</button>
+								</Link>
 							</div>
 						</div>
 					</>

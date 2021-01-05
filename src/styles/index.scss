@@ -4,11 +4,7 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-.fullPlanetList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+
 .fab {
     margin: 10px;
 }
@@ -60,36 +56,54 @@
 // 	animation: 18s linear 0s infinite move;
 // }
 
-@keyframes move {
-	0% {
-		transform: translatex(-140px);
-	}
-	25% {
-		transform: translatex(140px);
-		opacity: 0.3;
-	}
-	50% {
-		transform: translatex(140px);
-		opacity: 1;
-		background: radial-gradient(90px circle at bottom center, rgba(238,88,63,.5) 30%, rgba(255,255,255,0));
-	}
-	75% {
-		transform: translatex(-140px);
-		opacity: 0.3;
-	}
-	100% {
-		opacity: 1;
-		transform: translatex(-140px);
-		background: radial-gradient(90px circle at top center, rgba(238,88,63,.5) 30%, rgba(255,255,255,0));
-	}
-}
+// @keyframes move {
+// 	0% {
+// 		transform: translatex(-140px);
+// 	}
+// 	25% {
+// 		transform: translatex(140px);
+// 		opacity: 0.3;
+// 	}
+// 	50% {
+// 		transform: translatex(140px);
+// 		opacity: 1;
+// 		background: radial-gradient(90px circle at bottom center, rgba(238,88,63,.5) 30%, rgba(255,255,255,0));
+// 	}
+// 	75% {
+// 		transform: translatex(-140px);
+// 		opacity: 0.3;
+// 	}
+// 	100% {
+// 		opacity: 1;
+// 		transform: translatex(-140px);
+// 		background: radial-gradient(90px circle at top center, rgba(238,88,63,.5) 30%, rgba(255,255,255,0));
+// 	}
+// }
 
 body {
-    background-color: black;
+  /* Location of the image */
+    background-image: url("../img/cool.jpg");
+
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  opacity: 1;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
 }
-// .social {
-//     margin-bottom: 100px;
-// }
+
 #Q1 {
     background-image: linear-gradient(to right,#ee2d87, #f22278, #fc7745);
 
@@ -101,6 +115,7 @@ body {
 
 .card-body {
     text-align: center;
+    display: inline-block;
 }
 
 .cards {
@@ -111,14 +126,34 @@ body {
     
 }
 
-// .jumbotron {
+.words {
+    text-align: center;
+}
+
+.singleRecipe {
+    background-color: black;
+    opacity: 0.85;
+    padding: 5px;
+}
+
+.singleRecipe .content {
+    opacity: 1 !important;
+    color: white;
+    border: 1px solid green;
+}
+
+// .singCocktail {
+
+// }
+
+// .homePage {
 //     background-image: url("../img/cool.jpg");
 //     background-repeat: no-repeat;
 //     background-position: 50px 150px;
 //     background-size: contain;
-//     background-color: black;
+//     // background-color: black;
 //     background-position: 0px 0px;
 //     background-position-x: right;
-//     opacity: 0.8;
+    // opacity: 0.8;
 // } 
 
