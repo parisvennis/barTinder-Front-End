@@ -53,43 +53,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 
-			setBase: (base, i) => {
-				const currentStore = getStore();
-				// console.log("@@@", base, i);
-				// keeps the base from being able to be clicked twice
-				if (currentStore.base.length == 0) {
-					setStore({
-						base: [...currentStore.base, { base: base, id: i }]
-					});
-				} else {
-					for (let i = 0; i < currentStore.base.length; i++) {
-						if (!currentStore.base[i].base.includes(base)) {
-							console.log(currentStore.base[i]);
-							setStore({
-								base: [...currentStore.base, { base: base, id: i }]
-							});
-						}
-						// if (!currentStore.base[i].includes(base)) {
-						// 	setStore({
-						// 		base: [...currentStore.base, { base: base, id: i }]
-						// 	});
-						// }
-					}
-				}
-				let test = currentStore.base.filter((item, i) => item.id != i);
-				console.log(test);
-				// currentStore.base.forEach(i => {
-				// if (currentStore.base[i].base.includes(base)) {
-				// 	console.log(currentStore.base);
-				// 	setStore({
-				// 		base: [...currentStore.base, { base: base, id: i }]
-				// 	});
-				// } else {
-				// 	let newBasesArray = currentStore.base.filter((item, i) => item.id != i);
-				// 	setStore({ base: newBasesArray });
-				// }
-				// });
-			},
+			// setBase: (base, i) => {
+			// 	const currentStore = getStore();
+			// 	setStore([ ...currentStore.base, { base: }])
+			// let test = currentStore.base.filter((item, i) => item.id != i);
+			// console.log(test);
+			// currentStore.base.forEach(i => {
+			// if (currentStore.base[i].base.includes(base)) {
+			// 	console.log(currentStore.base);
+			// 	setStore({
+			// 		base: [...currentStore.base, { base: base, id: i }]
+			// 	});
+			// } else {
+			// 	let newBasesArray = currentStore.base.filter((item, i) => item.id != i);
+			// 	setStore({ base: newBasesArray });
+			// }
+			// });
+			// },
 
 			addBase: async base => {
 				const currentStore = getStore();
