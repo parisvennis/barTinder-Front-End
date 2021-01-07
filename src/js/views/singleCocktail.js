@@ -12,7 +12,7 @@ const SingleCocktail = () => {
 					<div className="singleRecipe">
 						<div className="content">
 							<div className="card" style={{ width: "18rem" }}>
-								{/* <img src="..." className="card-img-top" alt="..." /> */}
+								<img src={store.getCocktail[0].strDrinkThumb} className="card-img-top" alt="..." />
 								<div className="card-body bg-dark">
 									<h5 className="card-title">{store.getCocktail[0].strDrink}</h5>
 									<p className="card-text">
@@ -29,8 +29,35 @@ const SingleCocktail = () => {
 										{store.getCocktail[0].strIngredient4 != null && (
 											<div>{store.getCocktail[0].strIngredient4}</div>
 										)}
-										{store.getCocktail[0].strIngredient5 != null && (
-											<div>{store.getCocktail[0].strIngredient5}</div>
+										{store.getCocktail[0].strIngredient6 != null && (
+											<div>{store.getCocktail[0].strIngredient6}</div>
+										)}
+										{store.getCocktail[0].strIngredient7 != null && (
+											<div>{store.getCocktail[0].strIngredient7}</div>
+										)}
+										{store.getCocktail[0].strIngredient8 != null && (
+											<div>{store.getCocktail[0].strIngredient8}</div>
+										)}
+										{store.getCocktail[0].strIngredient9 != null && (
+											<div>{store.getCocktail[0].strIngredient9}</div>
+										)}
+										{store.getCocktail[0].strIngredient10 != null && (
+											<div>{store.getCocktail[0].strIngredient10}</div>
+										)}
+										{store.getCocktail[0].strIngredient11 != null && (
+											<div>{store.getCocktail[0].strIngredient11}</div>
+										)}
+										{store.getCocktail[0].strIngredient12 != null && (
+											<div>{store.getCocktail[0].strIngredient12}</div>
+										)}
+										{store.getCocktail[0].strIngredient13 != null && (
+											<div>{store.getCocktail[0].strIngredient13}</div>
+										)}
+										{store.getCocktail[0].strIngredient14 != null && (
+											<div>{store.getCocktail[0].strIngredient14}</div>
+										)}
+										{store.getCocktail[0].strIngredient15 != null && (
+											<div>{store.getCocktail[0].strIngredient15}</div>
 										)}
 									</p>
 									<a href="#" className="btn btn-primary">

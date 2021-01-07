@@ -30,10 +30,10 @@ export const StepBase = function() {
 
 				<button
 					onClick={async () => {
-						let success = await actions.addBase(base);
+						let success = await actions.addBase("Vodka");
 
 						if (success) {
-							history.push("/questions/1");
+							history.push("/");
 						} else {
 							alert("something went wrong, please try again");
 						}

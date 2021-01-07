@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: auto;
 }
 
 .fab {
@@ -128,32 +129,26 @@ body {
 
 .words {
     text-align: center;
+    background-color: black;
+    opacity: 0.85;
+    padding: 30px;
+    /* border-radius: 400px; */
+    margin-top: 50px;
+}
+
+.words .content {
+    opacity: 1 !important;
+    color: white !important;
 }
 
 .singleRecipe {
-    background-color: black;
-    opacity: 0.85;
+    background-color: #f22278;
+    // opacity: 0.85;
     padding: 5px;
+    margin: auto;
 }
 
 .singleRecipe .content {
     opacity: 1 !important;
     color: white;
-    border: 1px solid green;
 }
-
-// .singCocktail {
-
-// }
-
-// .homePage {
-//     background-image: url("../img/cool.jpg");
-//     background-repeat: no-repeat;
-//     background-position: 50px 150px;
-//     background-size: contain;
-//     // background-color: black;
-//     background-position: 0px 0px;
-//     background-position-x: right;
-    // opacity: 0.8;
-// } 
-

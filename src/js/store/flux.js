@@ -1,4 +1,4 @@
-const barTinderBackEndURL = "https://3000-c1e8e786-36fe-4345-b0da-3eb0f9f784b5.ws-us03.gitpod.io/";
+const barTinderBackEndURL = "https://3000-c3b25a73-0bb4-44b2-924a-7d10da9cbe83.ws-us03.gitpod.io/";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -11,8 +11,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			base: []
 		},
 		actions: {
-			login: (email, password) => {
-				fetch(`${barTinderBackEndURL}login`, {
+			login: async (email, password) => {
+				await fetch(`${barTinderBackEndURL}login`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -36,8 +36,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ token: null });
 			},
 
-			signup: (email, password, birth, first, last) => {
-				fetch(`${barTinderBackEndURL}user`, {
+			signup: async (email, password, birth, first, last) => {
+				const response = await fetch(`${barTinderBackEndURL}user`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -51,6 +51,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						created_date: "2019-01-01"
 					})
 				});
+				if (response.ok) {
+					return true;
+				} else {
+					return false;
+				}
 			},
 
 			setBase: (base, i) => {
@@ -91,19 +96,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				// });
 			},
 
-			addBase: async base => {
+			addBase: async (base, base2) => {
 				const currentStore = getStore();
 
-				const response = await fetch(`${barTinderBackEndURL},base`, {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json"
-					},
-					body: JSON.stringify({
-						...currentStore.currentBase,
-						base: base
-					})
-				});
+				const response = await fetch(
+					`https://www.thecocktaildb.com/api/json/V2/9973533/filter.php?i=${base},${base2 ? base2 : ""},${
+						base3 ? base3 : ""
+					},${base4 ? base4 : ""},${base5 ? base5 : ""},${base6 ? base6 : ""}`
+				);
 				if (response.ok) {
 					const data = await response.json();
 					setStore({
