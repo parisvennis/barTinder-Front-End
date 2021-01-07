@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/home.scss";
+import { Button } from "bootstrap";
 
 export const Home = () => {
 	return (

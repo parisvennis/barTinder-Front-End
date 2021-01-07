@@ -17,7 +17,6 @@ export const Questions = function() {
 	const history = useHistory();
 	const params = useParams();
 	const CurrentView = steps[params.currentstep || 0];
-	console.log("Refrescando el componente", params);
 	return (
 		<>
 			{/* {!store.token ?  */}
