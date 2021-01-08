@@ -21,7 +21,7 @@ export const StepBase = function() {
 							type="button"
 							value={base}
 							id="Q1"
-							className="btn btn-primary btn-lg mb-3 p-2"
+							className={`btn btn-primary btn-lg mb-3 p-2 ${store.base.includes(base) && "baseButton"}`}
 							onClick={e => actions.setBase(e.target.value, index)}>
 							{base}
 						</button>
@@ -30,7 +30,7 @@ export const StepBase = function() {
 
 				<button
 					onClick={async () => {
-						let success = await actions.addBase("Vodka");
+						let success = await actions.addBase();
 
 						if (success) {
 							history.push("/");

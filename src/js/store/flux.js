@@ -58,6 +58,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			setBase: b => {
+				const store = getStore();
+				const baseIndex = store.base.indexOf(b);
+				if (baseIndex == -1) {
+					setStore({ base: [...store.base, b] });
+				} else {
+					const newBasesArray = store.base.filter((f, i) => baseIndex != i);
+					setStore({ base: newBasesArray });
+				}
+			},
+
 			// setBase: (base, i) => {
 			// 	const currentStore = getStore();
 			// 	setStore([ ...currentStore.base, { base: }])
@@ -76,13 +87,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// });
 			// },
 
-			addBase: async (base, base2) => {
+			addBase: async () => {
 				const currentStore = getStore();
-
+				var baseString = "";
+				if (currentStore.base.length > 0) {
+					for (let i = 0; i < currentStore.base.length; i++) {
+						if (i == currentStore.base.length - 1) {
+							baseString += `${currentStore.base[i]}`;
+						} else {
+							baseString += `${currentStore.base[i]},`;
+						}
+					}
+				}
+				console.log(baseString);
 				const response = await fetch(
-					`https://www.thecocktaildb.com/api/json/V2/9973533/filter.php?i=${base},${base2 ? base2 : ""},${
-						base3 ? base3 : ""
-					},${base4 ? base4 : ""},${base5 ? base5 : ""},${base6 ? base6 : ""}`
+					`https://www.thecocktaildb.com/api/json/V2/9973533/filter.php?i=${baseString}`
 				);
 				if (response.ok) {
 					const data = await response.json();
