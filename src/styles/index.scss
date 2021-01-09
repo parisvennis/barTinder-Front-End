@@ -1,9 +1,8 @@
 
-.cardListContainer {
-    display: flex;
+.cardContainer {
+        display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
 }
 
 .fab {

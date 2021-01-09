@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useHistory, Redirect } from "react-router-dom";
+import Pretty from "../../img/pretty.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -14,7 +15,6 @@ export const Login = () => {
 			{store.token != null ? <Redirect to="/" /> : ""}
 
 			<form className="form-signin">
-				<img className="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" />
 				<h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
 				<label htmlFor="inputEmail" className="sr-only">
 					Email address

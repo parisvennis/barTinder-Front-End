@@ -33,13 +33,13 @@ export const StepBase = function() {
 						let success = await actions.addBase();
 
 						if (success) {
-							history.push("/");
+							history.push("/stepModifier");
 						} else {
 							alert("something went wrong, please try again");
 						}
 					}}
 					type="button"
-					className="btn btn-basic mx-auto w-25">
+					className="btn btn-light mx-auto w-25">
 					Next
 				</button>
 			</div>

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
+
 import Logo from "../../img/logo.png";
 import { Context } from "../store/appContext";
 
@@ -89,8 +90,8 @@ export const Navbar = () => {
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/planets">
-								MY ACCOUNT
+							<Link className="nav-link" to="/favorites">
+								MY FAVORITES
 							</Link>
 						</li>
 					</ul>
