@@ -11,9 +11,9 @@ export const StepBase = function() {
 	return (
 		<>
 			<div className="container d-flex flex-column h-100 justify-content-center">
-				<h3 className="text-center mb-4" style={{ color: "white" }}>
-					Select Your Base
-				</h3>
+				<bold>
+					<h1 className="questionTitle text-center mb-4">Select Your Base</h1>
+				</bold>
 				{bases.map((base, index) => {
 					return (
 						<button

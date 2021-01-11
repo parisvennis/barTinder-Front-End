@@ -157,11 +157,30 @@ body {
     padding: 30px;
     /* border-radius: 400px; */
     margin-top: 50px;
+    color: white;
+    width: 75%;
+    margin: auto;
+    border-radius: 50;
+}
+.btn {
+    border: 1px solid #ee2d87 !important;;
+}
+.homeTitle {
+    color: #ee2d87 !important;
 }
 
 .words .content {
     opacity: 1 !important;
     color: white !important;
+}
+.questionTitle { 
+    background-color: black;
+    color: white;
+    width:70%;
+    margin: auto;
+    border-radius:10px;
+    margin-top: 20px;
+    padding: 5px;
 }
 
 .singleRecipe {

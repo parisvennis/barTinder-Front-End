@@ -10,6 +10,7 @@ import { Questions } from "./views/questions";
 
 import { Home } from "./views/home";
 import RandomCocktails from "./views/randomCocktails";
+import PopularCocktails from "./views/popularCocktails";
 import { Signup } from "./views/signup";
 import injectContext from "./store/appContext";
 import { Login } from "./component/login";
@@ -35,6 +36,7 @@ const Layout = () => {
 						<Route exact path="/signup" component={Signup} />
 						<Route exact path="/private" component={Private} />
 						<Route exact path="/random-cocktails" component={RandomCocktails} />
+						<Route exact path="/popular-cocktails" component={PopularCocktails} />
 						<Route exact path="/single-cocktail" component={SingleCocktail} />
 						<Route exact path="/questions" component={Questions} />
 						<Route exact path="/questions/:currentstep" component={Questions} />

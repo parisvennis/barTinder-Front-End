@@ -5,7 +5,9 @@ import { Button } from "bootstrap";
 export const Home = () => {
 	return (
 		<div className="words">
-			<h1 className="background display-4">Get Matched to Your Favorite Drink!</h1>
+			<bold>
+				<h1 className="homeTitle background display-4">Get Matched to Your Favorite Drink!</h1>
+			</bold>
 			<p>
 				We have designed a simple and fast quiz that will match you to the drink that best suits you! It takes
 				into account your taste buds, allergies, and requests and creates your best match!

@@ -81,12 +81,12 @@ export const Navbar = () => {
 						</li>
 						<li className="nav-item">
 							<Link className="nav-link" to="/random-cocktails">
-								COCKTAILS
+								RANDOM COCKTAILS
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/planets">
-								LIQUORS
+							<Link className="nav-link" to="/popular-cocktails">
+								POPULAR COCKTAILS
 							</Link>
 						</li>
 						{/* <li className="nav-item">

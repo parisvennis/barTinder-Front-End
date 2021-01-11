@@ -6,6 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: [],
 			getCocktail: [],
 			randomCocktails: [],
+			popularCocktails: [],
 			token: null,
 			currentBase: [],
 			currentMod: [],
@@ -153,6 +154,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => data.json())
 					.then(response => {
 						setStore({ randomCocktails: response.drinks });
+					});
+			},
+
+			getPopularCocktails: () => {
+				fetch("https://www.thecocktaildb.com/api/json/V2/9973533/popular.php")
+					.then(data => data.json())
+					.then(response => {
+						setStore({ popularCocktails: response.drinks });
 					});
 			},
 

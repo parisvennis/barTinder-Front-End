@@ -12,7 +12,7 @@ export const Login = () => {
 	const [password, setPassword] = useState();
 	return (
 		<>
-			{store.token != null ? <Redirect to="/" /> : ""}
+			{store.token != null ? <Redirect to="/private" /> : ""}
 
 			<form className="form-signin">
 				<h1 className="loginTitle h3 mb-3 font-weight-normal">Please Sign In</h1>
