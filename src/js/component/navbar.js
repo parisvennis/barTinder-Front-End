@@ -94,11 +94,11 @@ export const Navbar = () => {
 								POPULAR COCKTAILS
 							</Link>
 						</li>
-						{/* <li className="nav-item">
+						<li className="nav-item">
 							<Link className="nav-link" to="/favorites">
 								MY FAVORITES
 							</Link>
-						</li> */}
+						</li>
 					</ul>
 				</div>
 			</nav>

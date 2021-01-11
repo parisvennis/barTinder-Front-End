@@ -8,6 +8,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			randomCocktails: [],
 			popularCocktails: [],
 			token: null,
+			loggedUserId: null,
+			loggedUser: null,
 			currentBase: [],
 			currentMod: [],
 			base: [],
@@ -30,13 +32,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 						if (typeof token.msg != "undefined") {
 							// Notify.error(token.msg);
 						} else {
-							setStore({ token: token.jwt });
+							setStore({ token: token.jwt, loggedUserId: token.id });
 						}
 					});
 			},
 
 			logout: () => {
-				setStore({ token: null });
+				setStore({ token: null, loggedUserId: null, loggedUser: null });
 			},
 
 			signup: async (email, password, birth, first, last) => {
@@ -173,42 +175,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 
-			// addFavorite: favorite => {
-			// 	const store = getStore();
-			// 	let newFavorite = { name: favorite };
-			// 	updatedStore.favorites.concat(newFavorite);
-			// 	setStore(store);
-			// },
-
-			// deleteFavorite: name => {
-			// 	const store = getStore();
-			// 	let returnArr = store.favorites.filter((element, index) => {
-			// 		return id != index;
-			// 	});
-			// 	setStore({ favorites: returnArr });
-
-			// Use getActions to call a function within a fuction
+			getLoggedUser: id => {
+				fetch(`${barTinderBackEndURL}user/${id}`)
+					.then(data => data.json())
+					.then(response => {
+						setStore({ loggedUser: response });
+					});
+			},
 
 			addFavorites: async (drink_id, drink_name) => {
 				console.log(drink_id, drink_name);
+				const store = getStore();
 				await fetch(`${barTinderBackEndURL}favorites`, {
 					method: "POST",
 					headers: {
-						"Content-Type": "application/json"
+						"Content-Type": "application/json",
+						authorization: `Bearer ${store.token}`
 					},
 					body: JSON.stringify({
 						drink_id: drink_id,
 						drink_name: drink_name
 					})
-				})
-					.then(response => response.json())
-					.then(token => {
-						if (typeof token.msg != "undefined") {
-							// Notify.error(token.msg);
-						} else {
-							setStore({ token: token.jwt });
-						}
-					});
+				}).then(() => getActions().getLoggedUser(store.loggedUserId));
 			}
 			// post to the favorite endpoint on your api
 			// then fetch from api your favorites
