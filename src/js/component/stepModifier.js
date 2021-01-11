@@ -5,12 +5,66 @@ import { Redirect, useHistory, useParams } from "react-router-dom";
 export const StepMods = function() {
 	const { store, actions } = useContext(Context);
 	const history = useHistory();
-	const mods = ["triple sec", "Strawberry Liquer", "Peach Schnapps", "Tequila", "Whiskey", "Non Alcoholic"];
+	const mods = [
+		"Agave",
+		"Amaretto",
+		"Apple Schnapps",
+		"Baileys",
+		"Banana",
+		"Bitters",
+		"Blackberries",
+		"Blue Curacao",
+		"Champagne",
+		"Cherries",
+		"Cinnamon Schnapps",
+		"Club Soda",
+		"Coca-Cola",
+		"Coconut",
+		"Coffee",
+		"Cranberry",
+		"Fruit",
+		"Ginger Ale",
+		"Ginger Beer",
+		"Grapefruit Juice",
+		"Grenadine",
+		"Kahlua",
+		"Lemon",
+		"Lime",
+		"Melon Liquor",
+		"Midori",
+		"Mint",
+		"Orange",
+		"Orange Juice",
+		"Passion Fruit",
+		"Peach",
+		"Peach Schnapps",
+		"Pineapple Juice",
+		"Raspberry",
+		"Raspberry Liquor",
+		"Root Beer",
+		"Schnapps",
+		"Soda Water",
+		"Sorite",
+		"Strawberries",
+		"Strawberry Liquor",
+		"Sugar",
+		"Sweet and Sour",
+		"Sweet Vermouth",
+		"Tomato Juice",
+		"Tonic Water",
+		"Triple Sec",
+		"Vermouth",
+		"Water",
+		"Watermelom Schnapps",
+		"Whipped Cream",
+		"Caramel Sauce",
+		"Chocolate Sauce"
+	];
 	// const [mod, setmod] = useState(null);
 
 	return (
 		<>
-			<div className="container d-flex flex-column h-100 justify-content-center">
+			<div id="questionContainer" className="container">
 				<bold>
 					<h1 className="questionTitle text-center mb-4">Select Your Modifiers</h1>
 				</bold>
@@ -20,7 +74,7 @@ export const StepMods = function() {
 							key={index}
 							type="button"
 							value={mod}
-							id="Q1"
+							id="questionButton"
 							className={`btn btn-primary btn-lg mb-3 p-2 ${store.mod.includes(mod) && "modButton"}`}
 							onClick={e => actions.setMod(e.target.value, index)}>
 							{mod}

@@ -111,6 +111,12 @@ const SingleCocktail = () => {
 									</p>
 									<p className="card-text instructions ">{store.getCocktail[0].strInstructions}</p>
 									<FaveButton drink={store.getCocktail[0]} />
+									<a
+										className="singCocktailHomeButton btn btn-outline-light btn-sm"
+										href="/"
+										role="button">
+										Back Home
+									</a>
 								</div>
 							</div>
 						</div>

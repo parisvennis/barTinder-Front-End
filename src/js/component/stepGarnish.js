@@ -20,7 +20,7 @@ export const StepModifier = function() {
 							key={index}
 							type="button"
 							value={base}
-							id="Q1"
+							id="questionButton"
 							className={`btn btn-primary btn-lg mb-3 p-2 ${store.base.includes(base) && "baseButton"}`}
 							onClick={e => actions.setBase(e.target.value, index)}>
 							{base}

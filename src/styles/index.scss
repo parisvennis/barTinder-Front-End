@@ -128,8 +128,17 @@ body {
   background-color: #464646;
 }
 
-#Q1 {
+.container {
+
+    text-align: center;
+}
+#questionButton {
     background-image: linear-gradient(to right,#ee2d87, #f22278, #fc7745);
+    margin: 5px 5px;
+    padding: 5px;
+    font-size: 0.8em;
+
+
 
 }
 
@@ -167,7 +176,23 @@ body {
 }
 .homeTitle {
     color: #ee2d87 !important;
-    opacity: 1;
+    opacity: 1 !important;
+}
+.resultHomeButton {
+    text-align: center;
+    background-color: #ee2d87;
+    width: 50%;
+}
+
+.singCocktailHomeButton {
+    width:50%; 
+    text-align: center;
+    background-color: #ee2d87;
+    margin-left: 20px;
+}
+.homeMid {
+    color: white !important;
+    opacity: 1 !important;
 }
 .cardSet {
     margin: auto;

@@ -31,6 +31,9 @@ const Results = () => {
 						);
 					})}{" "}
 			</div>
+			<a className="resultHomeButton btn btn-outline-light btn-sm" href="/" role="button">
+				Back Home
+			</a>
 		</>
 	);
 };
