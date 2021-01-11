@@ -19,7 +19,7 @@ export const Navbar = () => {
 							placeholder="Search Drinks"
 							spellCheck="false"
 							autoCorrect="off"
-							autoCapitalize="off"
+							autoCapitalize="on"
 							autoComplete="off"
 						/>
 					</div>
@@ -77,6 +77,11 @@ export const Navbar = () => {
 						<li className="nav-item active">
 							<Link className="nav-link" to="/">
 								HOME
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="/questions">
+								TAKE THE QUIZ
 							</Link>
 						</li>
 						<li className="nav-item">

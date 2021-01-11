@@ -167,6 +167,18 @@ body {
 }
 .homeTitle {
     color: #ee2d87 !important;
+    opacity: 1;
+}
+.cardSet {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#singCocktail {
+    margin: auto;
+    margin-top: 20px;
 }
 
 .words .content {

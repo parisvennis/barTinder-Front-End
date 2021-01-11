@@ -11,9 +11,9 @@ export const StepMods = function() {
 	return (
 		<>
 			<div className="container d-flex flex-column h-100 justify-content-center">
-				<h3 className="text-center mb-4" style={{ color: "white" }}>
-					Select Your Modifiers
-				</h3>
+				<bold>
+					<h1 className="questionTitle text-center mb-4">Select Your Modifiers</h1>
+				</bold>
 				{mods.map((mod, index) => {
 					return (
 						<button
