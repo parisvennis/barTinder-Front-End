@@ -19,6 +19,28 @@
     display: inline-table;
     margin-left: 50px;
 }
+
+.loginTitle {
+    color: white;
+    text-align: center;
+}
+.form-signin {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    background-color: grey;
+    padding: 30px;
+    border-radius: 50px;
+
+
+}
+.loginButton {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+
+}
 .signup {
 	text-align: center;
 	border-radius: 50px;

@@ -15,9 +15,9 @@ export const Login = () => {
 			{store.token != null ? <Redirect to="/" /> : ""}
 
 			<form className="form-signin">
-				<h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+				<h1 className="loginTitle h3 mb-3 font-weight-normal">Please Sign In</h1>
 				<label htmlFor="inputEmail" className="sr-only">
-					Email address
+					Email Address
 				</label>
 				<input
 					type="email"
@@ -39,13 +39,13 @@ export const Login = () => {
 					required
 					onChange={e => setPassword(e.target.value)}
 				/>
-				<div className="checkbox mb-3">
+				{/* <div className="checkbox mb-3">
 					<label>
 						<input type="checkbox" value="remember-me" /> Remember me
 					</label>
-				</div>
+				</div> */}
 				<button
-					className="btn btn-lg btn-primary btn-block"
+					className="loginButton btn btn-lg btn-light btn-block"
 					onClick={async () => actions.login(email, password)}
 					type="button">
 					Login

@@ -16,8 +16,7 @@ export const Signup = () => {
 		<>
 			{store.token ? <Redirect to="/" /> : ""}
 			<form className="form-signin">
-				<img className="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" />
-				<h1 className="h3 mb-3 font-weight-normal">Please Sign In</h1>
+				<h1 className="loginTitle h3 mb-3 font-weight-normal">Please Sign Up</h1>
 				<label htmlFor="inputEmail" className="sr-only">
 					Email Address
 				</label>
@@ -74,13 +73,13 @@ export const Signup = () => {
 					required
 					onChange={e => setBirth(e.target.value)}
 				/>
-				<div className="checkbox mb-3">
+				{/* <div className="checkbox mb-3">
 					<label>
 						<input type="checkbox" value="remember-me" /> Remember me
 					</label>
-				</div>
+				</div> */}
 				<button
-					className="btn btn-lg btn-primary btn-block"
+					className="loginButton btn btn-lg btn-light btn-block"
 					type="button"
 					onClick={async () => {
 						let success = await actions.signup(email, password, birth, first, last);
