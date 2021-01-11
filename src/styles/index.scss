@@ -183,7 +183,14 @@ body {
     background-color: #ee2d87;
     width: 50%;
 }
-
+.ingredientGroup {
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+}
+.secElement {
+    margin-left: 5px;
+}
 .singCocktailHomeButton {
     width:50%; 
     text-align: center;
@@ -225,6 +232,7 @@ body {
     // opacity: 0.85;
     padding: 5px;
     margin: auto;
+    margin-top: 10px;
 }
 
 .singleRecipe .content {
