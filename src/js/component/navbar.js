@@ -94,11 +94,13 @@ export const Navbar = () => {
 								POPULAR COCKTAILS
 							</Link>
 						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="/favorites">
-								MY FAVORITES
-							</Link>
-						</li>
+						{store.token != null && (
+							<li className="nav-item">
+								<Link className="nav-link" to="/favorites">
+									MY FAVORITES
+								</Link>
+							</li>
+						)}
 					</ul>
 				</div>
 			</nav>

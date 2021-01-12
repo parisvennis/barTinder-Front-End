@@ -14,7 +14,6 @@ import PopularCocktails from "./views/popularCocktails";
 import { Signup } from "./views/signup";
 import injectContext from "./store/appContext";
 import { Login } from "./component/login";
-import { Private } from "./views/private";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import SingleCocktail from "./views/singleCocktail";
@@ -34,7 +33,6 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/login" component={Login} />
 						<Route exact path="/signup" component={Signup} />
-						<Route exact path="/private" component={Private} />
 						<Route exact path="/random-cocktails" component={RandomCocktails} />
 						<Route exact path="/popular-cocktails" component={PopularCocktails} />
 						<Route exact path="/single-cocktail" component={SingleCocktail} />

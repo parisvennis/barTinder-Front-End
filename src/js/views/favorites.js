@@ -7,8 +7,8 @@ const Favorites = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<>
-			{store.loggedUser.favorites.length > 1 &&
-				store.loggedUser.favorites.map((favorite, i) => {
+			{store.favorites.length > 1 &&
+				store.favorites.map((favorite, i) => {
 					return (
 						<>
 							<div key={i} id="favorites" className="card" style={{ width: "18rem" }}>

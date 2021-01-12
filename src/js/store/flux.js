@@ -1,4 +1,4 @@
-const barTinderBackEndURL = "https://3000-c3b25a73-0bb4-44b2-924a-7d10da9cbe83.ws-us03.gitpod.io/";
+const barTinderBackEndURL = "https://3000-c3b25a73-0bb4-44b2-924a-7d10da9cbe83.ws-eu03.gitpod.io/";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -32,7 +32,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						if (typeof token.msg != "undefined") {
 							// Notify.error(token.msg);
 						} else {
-							setStore({ token: token.jwt, loggedUserId: token.id });
+							setStore({ token: token.jwt, loggedUserId: token.id, favorites: token.user.favorites });
 						}
 					});
 			},
@@ -184,7 +184,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			addFavorites: async (drink_id, drink_name) => {
-				console.log(drink_id, drink_name);
+				// console.log(drink_id, drink_name);
 				const store = getStore();
 				await fetch(`${barTinderBackEndURL}favorites`, {
 					method: "POST",

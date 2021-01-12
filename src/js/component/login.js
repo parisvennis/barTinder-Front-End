@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { useHistory, Redirect } from "react-router-dom";
-import Pretty from "../../img/pretty.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -12,7 +11,7 @@ export const Login = () => {
 	const [password, setPassword] = useState();
 	return (
 		<>
-			{store.token != null ? <Redirect to="/private" /> : ""}
+			{store.token != null ? <Redirect to="/" /> : ""}
 
 			<form className="form-signin">
 				<h1 className="loginTitle h3 mb-3 font-weight-normal">Please Sign In</h1>
