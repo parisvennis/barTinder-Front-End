@@ -16,6 +16,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			mod: []
 		},
 		actions: {
+			checkFavorites: item => {
+				const store = getStore();
+				for (let i of store.favorites) {
+					console.log("i: ", i);
+				}
+			},
 			login: async (email, password) => {
 				await fetch(`${barTinderBackEndURL}login`, {
 					method: "POST",

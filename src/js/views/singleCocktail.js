@@ -140,7 +140,20 @@ const SingleCocktail = () => {
 										</div>
 									</p>
 									<p className="card-text instructions ">{store.getCocktail[0].strInstructions}</p>
-									<FaveButton drink={store.getCocktail[0]} />
+									<button
+										type="button"
+										onClick={
+											(async () =>
+												actions.addFavorites(
+													store.getCocktail[0].strId,
+													store.getCocktail[0].strDrink
+												),
+											actions.checkFavorites(store.getCocktail[0].strDrink))
+										}
+										variant="outline-light">
+										<i className="far fa-heart" />
+									</button>
+									{/* <FaveButton drink={store.getCocktail[0]} /> */}
 									<a
 										className="singCocktailHomeButton btn btn-outline-light btn-sm"
 										href="/"

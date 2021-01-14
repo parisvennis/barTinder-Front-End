@@ -74,28 +74,29 @@ export const StepMods = function() {
 							key={index}
 							type="button"
 							value={mod}
-							id="questionButton"
+							id="questionButton2"
 							className={`btn btn-primary btn-lg mb-3 p-2 ${store.mod.includes(mod) && "modButton"}`}
 							onClick={e => actions.setMod(e.target.value, index)}>
 							{mod}
 						</button>
 					);
 				})}
+				<div className="nextButton">
+					<button
+						onClick={async () => {
+							let success = await actions.addMods();
 
-				<button
-					onClick={async () => {
-						let success = await actions.addMods();
-
-						if (success) {
-							history.push("/results");
-						} else {
-							alert("something went wrong, please try again");
-						}
-					}}
-					type="button"
-					className="btn btn-light mx-auto w-25">
-					Next
-				</button>
+							if (success) {
+								history.push("/results");
+							} else {
+								alert("something went wrong, please try again");
+							}
+						}}
+						type="button"
+						className="btn btn-light mx-auto w-25">
+						Next
+					</button>
+				</div>
 			</div>
 		</>
 	);
