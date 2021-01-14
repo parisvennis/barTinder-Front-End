@@ -17,9 +17,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			checkFavorites: item => {
+				console.log("ITEM: ", item);
 				const store = getStore();
-				for (let i of store.favorites) {
-					console.log("i: ", i);
+				let found = store.favorites.find(i => i.drink_name === item);
+				console.log("FOUND: ", found);
+				if (found != undefined) {
+					return true;
+				} else {
+					return false;
 				}
 			},
 			login: async (email, password) => {
@@ -181,39 +186,50 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 
-			getLoggedUser: id => {
+			getUserFavorites: id => {
 				fetch(`${barTinderBackEndURL}user/${id}`)
 					.then(data => data.json())
 					.then(response => {
-						setStore({ loggedUser: response });
+						setStore({ favorites: response.favorites });
 					});
+			},
+			deleteFavorite: async id => {
+				const store = getStore();
+				const drinkIndex = store.favorites.findIndex(i => i.drink_id == id);
+				console.log("####$: ", drinkIndex);
+				let favId = await store.favorites[drinkIndex].id;
+				console.log("ID: ", favId);
+				if (drinkIndex != -1) {
+					fetch(`${barTinderBackEndURL}favorites/${favId}`, {
+						method: "DELETE"
+					}).then(() => getActions().getUserFavorites(store.loggedUserId));
+				}
 			},
 
 			addFavorites: async (drink_id, drink_name) => {
 				// console.log(drink_id, drink_name);
 				const store = getStore();
-				await fetch(`${barTinderBackEndURL}favorites`, {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-						authorization: `Bearer ${store.token}`
-					},
-					body: JSON.stringify({
-						drink_id: drink_id,
-						drink_name: drink_name
-					})
-				}).then(() => getActions().getLoggedUser(store.loggedUserId));
+				let favCheck = await getActions().checkFavorites(drink_name);
+				console.log("FAV: ", favCheck);
+				if (!favCheck) {
+					await fetch(`${barTinderBackEndURL}favorites`, {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+							authorization: `Bearer ${store.token}`
+						},
+						body: JSON.stringify({
+							drink_id: drink_id,
+							drink_name: drink_name
+						})
+					}).then(() => getActions().getUserFavorites(store.loggedUserId));
+				} else {
+					getActions().deleteFavorite(drink_id);
+				}
 			}
 			// post to the favorite endpoint on your api
 			// then fetch from api your favorites
 			// save to store - your favorites result
-		},
-
-		deleteFavorite: id => {
-			const store = getStore();
-
-			const newFavorites = store.favorites.filter((item, i) => i !== id);
-			setStore({ favorites: newFavorites });
 		},
 
 		exampleFunction: () => {

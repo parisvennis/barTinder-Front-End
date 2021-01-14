@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { FaveButton } from "../component/faveButton";
@@ -6,6 +6,22 @@ import { Context } from "../store/appContext";
 
 const SingleCocktail = () => {
 	const { store, actions } = useContext(Context);
+	const [selected, setSelected] = useState();
+	useEffect(
+		() => {
+			const iconChanger = async () => {
+				let favCheck = actions.checkFavorites(store.getCocktail.length > 0 && store.getCocktail[0].strDrink);
+				if (favCheck === false) {
+					setSelected(false);
+				} else {
+					setSelected(true);
+				}
+			};
+			iconChanger();
+		},
+		[store.favorites]
+	);
+
 	return (
 		<>
 			{store.getCocktail.length > 0 && (
@@ -141,25 +157,24 @@ const SingleCocktail = () => {
 									</p>
 									<p className="card-text instructions ">{store.getCocktail[0].strInstructions}</p>
 									<button
+										className={selected && "selected"}
 										type="button"
-										onClick={
-											(async () =>
-												actions.addFavorites(
-													store.getCocktail[0].strId,
-													store.getCocktail[0].strDrink
-												),
-											actions.checkFavorites(store.getCocktail[0].strDrink))
-										}
+										onClick={() => {
+											actions.addFavorites(
+												store.getCocktail[0].idDrink,
+												store.getCocktail[0].strDrink
+											);
+										}}
 										variant="outline-light">
 										<i className="far fa-heart" />
 									</button>
 									{/* <FaveButton drink={store.getCocktail[0]} /> */}
-									<a
+									<Link
 										className="singCocktailHomeButton btn btn-outline-light btn-sm"
-										href="/"
+										to="/"
 										role="button">
 										Back Home
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
