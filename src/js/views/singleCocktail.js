@@ -162,7 +162,8 @@ const SingleCocktail = () => {
 										onClick={() => {
 											actions.addFavorites(
 												store.getCocktail[0].idDrink,
-												store.getCocktail[0].strDrink
+												store.getCocktail[0].strDrink,
+												store.getCocktail[0].strDrinkThumb
 											);
 										}}
 										variant="outline-light">

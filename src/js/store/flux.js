@@ -1,4 +1,4 @@
-const barTinderBackEndURL = "https://3000-c3b25a73-0bb4-44b2-924a-7d10da9cbe83.ws-eu03.gitpod.io/";
+const barTinderBackEndURL = "https://3000-dd137920-cec1-4b6c-a4c1-d7c9328b5d91.ws-us03.gitpod.io/";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -206,7 +206,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			addFavorites: async (drink_id, drink_name) => {
+			addFavorites: async (drink_id, drink_name, drink_img) => {
 				// console.log(drink_id, drink_name);
 				const store = getStore();
 				let favCheck = await getActions().checkFavorites(drink_name);
@@ -220,7 +220,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						},
 						body: JSON.stringify({
 							drink_id: drink_id,
-							drink_name: drink_name
+							drink_name: drink_name,
+							drink_img: drink_img
 						})
 					}).then(() => getActions().getUserFavorites(store.loggedUserId));
 				} else {

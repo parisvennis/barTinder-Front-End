@@ -9,10 +9,11 @@ const Favorites = () => {
 		<>
 			{store.favorites.length > 1 &&
 				store.favorites.map((favorite, i) => {
+					console.log(favorite);
 					return (
 						<>
 							<div key={i} id="favorites" className="card" style={{ width: "18rem" }}>
-								{/* <img src={cocktail.strDrinkThumb} className="card-img-top" alt="..." /> */}
+								<img src={favorite.drink_img} className="card-img-top" alt="..." />
 								<div className="card-body">
 									<Link to={`/single-cocktail`}>
 										<button
